@@ -14,6 +14,6 @@
 
     <modules>
         <module>spring-cloud-openfeign-01</module>
-        <module>spring-cloud-openfeign-02</module>
+        <module>client-openfeign-02</module>
     </modules>
 </project>

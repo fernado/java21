@@ -13,6 +13,7 @@
     <version>1.0</version>
 
     <modules>
+        <module>reactor-proj</module>
         <module>spring-proj</module>
         <module>spring-boot3</module>
         <module>spring-cloud</module>

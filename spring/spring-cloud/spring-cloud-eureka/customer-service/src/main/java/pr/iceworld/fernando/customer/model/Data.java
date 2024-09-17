@@ -1,5 +1,10 @@
 package pr.iceworld.fernando.customer.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Data<T> {
 
     private String code;
@@ -21,10 +26,17 @@ public class Data<T> {
     }
 
     public static <T> Data success(T data) {
-        return new Data<>("200", data);
+        return success(data, null);
+    }
+
+    public static <T> Data success(T data, String message) {
+        return new Data<>("200", data, message);
     }
 
     public static <T> Data failure(String code, String message) {
         return new Data<>(code, message);
     }
+
+
+
 }
