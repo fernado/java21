@@ -22,8 +22,8 @@ public class UserRegisterListener {
             throw new RuntimeException(e);
         }
         System.out.println(String.format("【%s】，给用户【%s】发送注册成功邮件! 触发时间【%s】", Thread.currentThread(), event.getUserName(), LocalDateTime.now()));
-
-        throw new RuntimeException("模拟异常");
+//  mock runtime exception will not impact the main program
+//        throw new RuntimeException("模拟异常");
     }
  
     @EventListener

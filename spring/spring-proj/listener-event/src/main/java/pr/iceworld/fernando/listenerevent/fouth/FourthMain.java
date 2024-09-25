@@ -13,5 +13,8 @@ public class FourthMain {
         UserRegisterService userRegisterService = context.getBean(UserRegisterService.class);
         //模拟用户注册
         userRegisterService.registerUser("张三");
+
+
+        context.close();
     }
 }

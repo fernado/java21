@@ -15,19 +15,19 @@ public class FourthMainConfig {
     @Bean
     public ApplicationEventMulticaster applicationEventMulticaster() { //@1
         //创建一个事件广播器
-        SimpleApplicationEventMulticaster result = new SimpleApplicationEventMulticaster();
+        SimpleApplicationEventMulticaster events = new SimpleApplicationEventMulticaster();
         //给广播器提供一个线程池，通过这个线程池来调用事件监听器
         Executor executor = this.applicationEventMulticasterThreadPool().getObject();
         //设置异步执行器
-        result.setTaskExecutor(executor);//@1
-        return result;
+        events.setTaskExecutor(executor);//@1
+        return events;
     }
  
     @Bean
     public ThreadPoolExecutorFactoryBean applicationEventMulticasterThreadPool() {
-        ThreadPoolExecutorFactoryBean result = new ThreadPoolExecutorFactoryBean();
-        result.setThreadNamePrefix("applicationEventMulticasterThreadPool-");
-        result.setCorePoolSize(5);
-        return result;
+        ThreadPoolExecutorFactoryBean threadPoolExecutorFactoryBean = new ThreadPoolExecutorFactoryBean();
+        threadPoolExecutorFactoryBean.setThreadNamePrefix("applicationEventMulticasterThreadPool-");
+        threadPoolExecutorFactoryBean.setCorePoolSize(5);
+        return threadPoolExecutorFactoryBean;
     }
 }

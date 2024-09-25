@@ -19,7 +19,7 @@ public class SimpleEventMulticaster implements EventMulticaster {
         List<EventListener> eventListeners = this.eventObjectEventListenerMap.get(event.getClass());
         if (eventListeners != null) {
             for (EventListener eventListener : eventListeners) {
-                eventListener.onEvent(event);
+                eventListener.processEvent(event);
             }
         }
     }

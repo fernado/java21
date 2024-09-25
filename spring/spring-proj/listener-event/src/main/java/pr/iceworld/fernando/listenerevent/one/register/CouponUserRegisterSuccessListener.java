@@ -11,7 +11,7 @@ import pr.iceworld.fernando.listenerevent.one.event.EventListener;
 @Order(10)
 public class CouponUserRegisterSuccessListener implements EventListener<UserRegisterSuccessEvent> {
     @Override
-    public void onEvent(UserRegisterSuccessEvent event) {
+    public void processEvent(UserRegisterSuccessEvent event) {
         System.out.println(
                 String.format("给用户【%s】更新优惠券!", event.getUserName()));
     }
