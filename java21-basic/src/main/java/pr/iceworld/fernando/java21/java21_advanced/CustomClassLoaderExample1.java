@@ -43,7 +43,7 @@ public class CustomClassLoaderExample1 {
 
         //
         Class<?> shared1 = sharedClassLoader.loadClass("pr.iceworld.fernando.java21.java21_advanced.shared.ShareClass");
-        Class<?> shared2 = this.getClass().getClassLoader().loadClass("pr.iceworld.fernando.java21.java21_advanced.shared.ShareClass");
+//        Class<?> shared2 = this.getClass().getClassLoader().loadClass("pr.iceworld.fernando.java21.java21_advanced.shared.ShareClass");
 //        Object sharedInstance1 = shared1.getDeclaredConstructor().newInstance();
 //        Object sharedInstance2 = shared2.getDeclaredConstructor().newInstance();
         System.out.println("Shared loaded class: " + shared1.getName());

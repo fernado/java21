@@ -106,7 +106,11 @@ public class CustomClassLoaderExample2 {
         System.out.println("Shared class loaded: " + sharedClass.getName());
 
         // ----
-        Class<?> app1Class2 = app2ClassLoader.loadClass("pr.iceworld.fernando.java21.java21_advanced.thread1.Thread1Class");
-        System.out.println("App 1 loaded class: " + app1Class2.getName());
+        try {
+            Class<?> app1Class2 = sharedClassLoader.loadClass("pr.iceworld.fernando.java21.java21_advanced.thread1.Thread1Class");
+            System.out.println("sharedClassLoader loaded class: " + app1Class2.getName());
+        } catch (ClassNotFoundException e) {
+            System.err.println("sharedClassLoader loaded class: pr.iceworld.fernando.java21.java21_advanced.thread1.Thread1Class not found");
+        }
     }
 }

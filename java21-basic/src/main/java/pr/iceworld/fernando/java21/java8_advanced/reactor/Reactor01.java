@@ -22,10 +22,10 @@ class BasicModel01 implements Runnable {
 
     public void run() {
         try {
-            ServerSocket ss = new ServerSocket(port);
+            ServerSocket serverSocket = new ServerSocket(port);
             System.out.println("Server is listening on port " + port);
             while (!Thread.interrupted())
-                new Thread(new Handler(ss.accept())).start();
+                new Thread(new Handler(serverSocket.accept())).start();
             //创建新线程来handle
             // or, single-threaded, or a thread pool
         } catch (IOException ex) { /* ... */ }
@@ -34,8 +34,8 @@ class BasicModel01 implements Runnable {
     static class Handler implements Runnable {
         final Socket socket;
 
-        Handler(Socket s) {
-            socket = s;
+        Handler(Socket clientSocket) {
+            socket = clientSocket;
         }
 
         public void run() {

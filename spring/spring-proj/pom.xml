@@ -15,5 +15,6 @@
     <modules>
         <module>bean-circular-dependency</module>
         <module>listener-event</module>
+        <module>demo</module>
     </modules>
 </project>
